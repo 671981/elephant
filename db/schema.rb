@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151010091500) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "image_url"
+    t.string   "image_url",   null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "colour"
