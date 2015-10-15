@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :products
   resources :orders, only: [:index, :show, :new, :create]
   get 'static_pages/about' # here the convention is that the action is "about" and the controller is "static_pages"
-
+  
   get 'static_pages/contact' # controller is going to be "static_pages" and action "contact"
 
   root 'static_pages#landing_page'

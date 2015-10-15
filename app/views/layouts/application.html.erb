@@ -28,11 +28,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/static_pages/about">About</a></li>
-        <li><a href="/static_pages/contact">Contact</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-        </li>
+        <li><%= link_to "Products", products_path %></li>
+        <li><%= link_to "Orders", orders_path %></li>
+        <li><%= link_to "About", static_pages_about_path %></li>
+        <li><%= link_to "Contact", static_pages_contact_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -48,7 +47,7 @@
 
     <footer>
       <div class="container">
-        <p class="text-muted">Lorem Ipsum Footer</p>
+        <p class="text-muted"><%= link_to "View", products_path %></p>
       </div>
     </footer>
 
