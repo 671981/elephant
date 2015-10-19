@@ -9,6 +9,14 @@ $primary-color: #333;
   border-radius: 0 !important;
 }
 
+search_navbar {
+  margin: 12px;
+}
+
+form-control {
+  width: 50%;
+}
+
 body {
   color: $primary-color;
   margin-bottom: 60px;
