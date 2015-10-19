@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :users
+  resources :users
   resources :products
   resources :orders, only: [:index, :show, :new, :create]
   get 'static_pages/about' # here the convention is that the action is "about" and the controller is "static_pages"
