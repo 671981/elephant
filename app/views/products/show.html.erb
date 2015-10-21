@@ -21,5 +21,10 @@
 	<%= @product.colour %>
 </p>
 
+<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+<hr>
+
+<%= render 'new_comment' %>
+<%= render 'reviews' %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
