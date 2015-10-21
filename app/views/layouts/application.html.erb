@@ -33,7 +33,16 @@
         <li><%= link_to "About", static_pages_about_path %></li>
         <li><%= link_to "Contact", static_pages_contact_path %></li>
       </ul>
-      <div class="navbar-form navbar-left" role="search">
+      <ul class="nav navbar-nav pull-right">
+        <li id="login">
+        <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+        <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </li>
+      </ul>
+      <div class="nav navbar-form navbar-left" role="search">
          <%= form_tag("/products", method: "get") do %>
               <!--<%= label_tag(:q, "Search for") %> -->
               <%= text_field_tag(:q) %>
