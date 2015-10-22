@@ -6,7 +6,7 @@ describe Product do
     
     before do
       @product = Product.create(:name => "race bike")
-      @user = User.create(:first_name => "John", :last_name => "Doe", :email => "test@test.com", :password => "12345678")
+      @user = User.create(:first_name => "Jan", :last_name => "Doe")
       @product.comments.create(:rating => 1, :user => @user, :body => "Horrible")
       @product.comments.create(:rating => 3, :user => @user, :body => "OK")
       @product.comments.create(:rating => 5, :user => @user, :body => "Amazing")
