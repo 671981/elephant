@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   
   get 'static_pages/contact' # controller is going to be "static_pages" and action "contact"
 
-  root 'static_pages#landing_page'
+  root 'static_pages#index'
+
+  get 'static_pages/index'
 
   post 'static_pages/thank_you'
 
