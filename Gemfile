@@ -36,6 +36,7 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem 'quiet_assets'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
