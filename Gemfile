@@ -66,3 +66,5 @@ gem "spork-rails"
 
 gem 'stripe'
 
+gem "brakeman", :require => false
+
