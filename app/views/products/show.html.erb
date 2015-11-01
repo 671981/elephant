@@ -1,35 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <h3>Name:</h3>
-  <%= @product.name %>
-</p>
+<% number_of_shows =  @product.number_of_shows %>
+<% if number_of_shows > 0 %>
+  <small># of Shows: <%= number_of_shows %> </small>
+<% end %>  
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<% cache(@product.cache_key) do %>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-  <%=image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: @product.image_url) %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-	<strong>Colour:</strong>
-	<%= @product.colour %>
-</p>
+  <p>
+    <h3>Name:</h3>
+    <%= @product.name %>
+  </p>
 
-<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-<hr>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Image url:</strong>
+    <%= @product.image_url %>
+    <%=image_tag(@product.image_url, class: "img-responsive img-zoom", data_zoom_image: @product.image_url) %>
+  </p>
+
+  <p>
+  	<strong>Colour:</strong>
+  	<%= @product.colour %>
+  </p>
+
+  <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+  <hr>
 
 
-<%= form_tag "/payments/create" do %>
-  <%= hidden_field_tag :product_id, @product.id %>
-  <%= render partial: "shared/stripe_checkout_button" %>
+  <%= form_tag "/payments/create" do %>
+    <%= hidden_field_tag :product_id, @product.id %>
+    <%= render partial: "shared/stripe_checkout_button" %>
+  <% end %>
+  <%= render 'new_comment' %>
+  <%= render 'reviews' %>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
 <% end %>
-<%= render 'new_comment' %>
-<%= render 'reviews' %>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

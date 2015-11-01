@@ -14,5 +14,16 @@ class Product < ActiveRecord::Base
     comments.average(:rating).to_f
   end
   
+  def cache_key
+    "#{super}-#{comments.count}"
+  end  
+
+  def number_of_shows
+    $redis.incr("product-shows-#{id}").to_i
+  rescue Exception => ex
+    Rails.logger.error(ex.message)
+    Rails.logger.error(ex.backtrace)
+    0  
+  end  
 end
 

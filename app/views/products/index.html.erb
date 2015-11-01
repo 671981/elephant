@@ -4,12 +4,13 @@
 
 <div class="container">
     <% cache(cache_key_for_products) do %>
-    <div class="row">
-    <% cache do %>
-    <%= render @products %>
+	    <div class="row">
+
+		       <%= render @products %>
+
+
+	    </div>
     <% end %>
-    <% end %>
-	</div>
 </div>  
 
 

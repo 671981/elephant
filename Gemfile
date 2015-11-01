@@ -70,6 +70,6 @@ gem "brakeman", :require => false
 
 gem 'angularjs-rails'
 
-gem 'dalli'
+#gem 'dalli'
 
 gem 'redis-rails'
