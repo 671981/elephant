@@ -43,6 +43,6 @@ Rails.application.configure do
 
   default_url_options
 
-
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:b2b8a71d84e6cbec8088fd235c3eee6e@cobia.redistogo.com:9503/'
 
 end
